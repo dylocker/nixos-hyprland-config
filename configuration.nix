@@ -21,7 +21,6 @@
 
   programs.hyprland = {
   	enable = true;
-  	withUWSM = false;
   	xwayland.enable = true;
   };
   
@@ -75,6 +74,7 @@
    playerctl
    git
    acpi
+   nh
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

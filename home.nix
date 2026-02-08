@@ -35,6 +35,7 @@
     foot
     waybar
     kitty
+    fastfetch
   ];
 
   wayland.windowManager.hyprland = {

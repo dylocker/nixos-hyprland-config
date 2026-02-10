@@ -7,6 +7,7 @@
 
   imports = [
     ./hyprland.nix
+    ./hyprpaper.nix
   ];
 
   programs.bash = {
@@ -40,6 +41,7 @@
     waybar
     kitty
     fastfetch
+    hyprpaper
   ];
 
   programs.kitty = {

@@ -4,6 +4,11 @@
   wayland.windowManager.hyprland = {
   	enable = true;
   	settings = {
+  	exec-once = [
+      "hyprpaper"
+ 	   # "waybar" (if you use it)
+       # "nm-applet --indicator"
+ 	 ];
     input = {
       "kb_layout" = "ch";
       "kb_variant" = "fr";

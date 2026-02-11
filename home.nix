@@ -7,7 +7,6 @@
 
   imports = [
     ./hyprland.nix
-    ./hyprpaper.nix
   ];
 
   programs.bash = {

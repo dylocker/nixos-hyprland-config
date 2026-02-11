@@ -1,9 +1,11 @@
-{ config, pkgs, ... }: {
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = [ "${./alpswallhaven.png}" ];
-      wallpaper = [ ",${./alpswallhaven.png}" ];
+{ config, pkgs, ... }: 
+
+  {
+    services.hyprpaper = {
+      enable = true;
+      settings = {
+        preload = [ "" ];
+        wallpaper = [ "eDP-1," ];
     };
   };
 }

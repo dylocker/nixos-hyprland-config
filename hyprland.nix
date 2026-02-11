@@ -4,14 +4,14 @@
   wayland.windowManager.hyprland = {
   	enable = true;
   	settings = {
-  	exec-once = [
-      "hyprpaper"
- 	   # "waybar" (if you use it)
-       # "nm-applet --indicator"
- 	 ];
-    input = {
-      "kb_layout" = "ch";
-      "kb_variant" = "fr";
+  	  exec-once = [
+  	    "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "hyprpaper"
+        "waybar"
+  	  ];
+      input = {
+        "kb_layout" = "ch";
+        "kb_variant" = "fr";
     	
 	  touchpad = {
 	    natural_scroll = true;

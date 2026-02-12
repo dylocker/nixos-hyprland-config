@@ -7,6 +7,7 @@
 
   imports = [
     ./hyprland.nix
+    ./modules/waybar.nix
   ];
 
   programs.bash = {

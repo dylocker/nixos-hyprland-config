@@ -34,13 +34,12 @@
   home.packages = with pkgs; [
     brave
     lf
-    vscodium
     micro
     foot
     waybar
     kitty
     fastfetch
-    hyprpaper
+    swww
   ];
 
   programs.kitty = {

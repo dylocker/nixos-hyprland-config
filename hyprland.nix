@@ -5,9 +5,9 @@
   	enable = true;
   	settings = {
   	  exec-once = [
-  	    "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "hyprpaper"
         "waybar"
+        "swww-daemon"
+        "swww img ${./wallpapers/alpswallhaven.png}"
   	  ];
       input = {
         "kb_layout" = "ch";

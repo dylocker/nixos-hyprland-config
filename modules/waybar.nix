@@ -8,7 +8,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 34;
+        height = 26;
         spacing = 4;
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
@@ -62,7 +62,7 @@
       * {
           border: none;
           font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", Roboto, Arial, sans-serif;
-          font-size: 13px;
+          font-size: 11px;
           min-height: 0;
       }
 
@@ -83,8 +83,8 @@
       }
 
       #clock, #cpu, #memory, #temperature, #battery, #tray {
-          padding: 0 10px;
-          margin: 4px 2px;
+          padding: 0 8px;
+          margin: 2px 2px;
           background-color: rgba(49, 50, 68, 0.5);
           border-radius: 8px;
       }

@@ -5,7 +5,7 @@
   	enable = true;
   	settings = {
   	  exec-once = [
-        "waybar"
+        "hyprctl setcursor Bibata-Modern-Classic 15"
         "swww-daemon"
         "swww img ${./wallpapers/alpswallhaven.png}"
   	  ];
@@ -50,7 +50,7 @@
   	      "$mod, P, pseudo,"                         # Dwindle (pseudo-tiling)
   	      "$mod, J, togglesplit,"                    # Dwindle (split orientation)
           "$mod, B, exec, brave"
-  	  
+  	      "$mod, W, exec, pkill waybar && waybar &"
   	      # Focus Movement (Vim-style or Arrow keys)
   	      "$mod, left, movefocus, l"
   	      "$mod, right, movefocus, r"

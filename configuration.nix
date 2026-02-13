@@ -75,8 +75,15 @@
    git
    acpi
    nh
+   bibata-cursors
+   mpd
+   lm_sensors
   ];
-
+  fonts.packages = with pkgs; [
+    nerd-fonts.symbols-only 
+    nerd-fonts.jetbrains-mono
+    font-awesome
+  ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
  
   system.stateVersion = "25.11"; 

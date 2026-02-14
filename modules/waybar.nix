@@ -13,7 +13,7 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "clock" ];
-        modules-right = [ "cpu" "memory" "temperature" "battery" "tray" ];
+        modules-right = [ "pulseaudio" "backlight" "bluetooth" "network" "battery" "tray" ];
 
         "hyprland/workspaces" = {
           format = "{name}";
@@ -26,20 +26,20 @@
           tooltip-format = "<tt><small>{calendar}</small></tt>";
         };
 
-        "cpu" = {
-          format = " {usage}%";
-          tooltip = false;
-        };
+        #"cpu" = {
+          #format = " {usage}%";
+          #tooltip = false;
+        #};
 
-        "memory" = {
-          format = " {}%";
-        };
+        #"memory" = {
+          #format = " {}%";
+        #};
 
-        "temperature" = {
-          critical-threshold = 80;
-          format = "{icon} {temperatureC}°C";
-          format-icons = ["" "" ""];
-        };
+        #"temperature" = {
+          #critical-threshold = 80;
+          #format = "{icon} {temperatureC}°C";
+          #format-icons = ["" "" ""];
+        #};
 
         "battery" = {
           states = {
@@ -55,8 +55,44 @@
         "tray" = {
           spacing = 10;
         };
+
+		"pulseaudio" = {
+          format = "{icon} {volume}%";
+          format-muted = "";
+          format-icons = {
+            default = ["" "" ""];
+          };
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+        };
+
+        "bluetooth" = {
+          format = " {status}";
+          format-connected = " {device_alias}";
+          format-connected-battery = " {device_alias} {device_battery_percentage}%";
+          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          on-click = "${pkgs.blueman}/bin/blueman-manager";
+        };
+
+        "network" = {
+          format-wifi = " {essid} ({signalStrength}%)";
+          format-ethernet = " {ipaddr}/{cidr}";
+          tooltip-format = " {ifname} via {gwaddr}";
+          format-linked = " {ifname} (No IP)";
+          format-disconnected = "⚠ Disconnected";
+          on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
+        };
+
+        "backlight" = {
+          format = "{icon} {percent}%";
+          format-icons = ["" "" "" "" "" "" "" "" ""];
+          on-scroll-up = "light -A 1"; # Note: requires 'light' or 'brightnessctl' pkg
+          on-scroll-down = "light -U 1";
+        };
       };
     };
+
 
     style = ''
       * {
@@ -82,7 +118,7 @@
           border-bottom: 2px solid #b4befe;
       }
 
-      #clock, #cpu, #memory, #temperature, #battery, #tray {
+      #clock, #pulseaudio, #network, #bluetooth, #battery, #tray, #backlight {
           padding: 0 8px;
           margin: 2px 2px;
           background-color: rgba(49, 50, 68, 0.5);

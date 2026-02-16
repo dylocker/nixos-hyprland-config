@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "daniellee";
@@ -37,10 +37,10 @@
     lf
     micro
     foot
-    waybar
     kitty
     fastfetch
     swww
+    fuzzel
   ];
 
   home.pointerCursor = {

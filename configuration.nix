@@ -48,10 +48,21 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
+  
   users.users.daniellee = {
     isNormalUser = true;
     description = "Daniel Lee";

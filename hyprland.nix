@@ -7,7 +7,8 @@
   	  exec-once = [
         "hyprctl setcursor Bibata-Modern-Classic 15"
         "swww-daemon"
-        "swww img ${./wallpapers/alpswallhaven.png}"
+        "swww img ${./wallpapers/choso.png}"
+        "anyrun --daemon"
   	  ];
       input = {
         "kb_layout" = "ch";

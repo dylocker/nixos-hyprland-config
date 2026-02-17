@@ -8,6 +8,7 @@
   imports = [
     ./hyprland.nix
     ./modules/waybar.nix
+    ./modules/rofi.nix
   ];
 
   programs.bash = {
@@ -40,7 +41,7 @@
     kitty
     fastfetch
     swww
-    fuzzel
+    rofi
   ];
 
   home.pointerCursor = {

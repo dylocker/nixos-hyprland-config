@@ -3,9 +3,11 @@
 {
   programs.rofi = {
   	enable = true;
-  	theme = "onedark";
   	font = "Jetbrains Mono";
-  	modes = [ "drun" "emoji" ]; 
+  	modes = [ "drun" "emoji" "filebrowser" ]; 
   	plugins = [ pkgs.rofi-emoji ];
+  	theme = ./rounded-template.rasi;
+  		
+  	};
   };
 }

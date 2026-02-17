@@ -41,7 +41,6 @@
     kitty
     fastfetch
     swww
-    rofi
   ];
 
   home.pointerCursor = {

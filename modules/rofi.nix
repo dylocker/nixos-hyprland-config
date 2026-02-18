@@ -12,7 +12,7 @@
   	    in {
   	      "*" = {
   	        # --- Color Palette (Adjust these to your liking) ---
-  	        bg0 = mkLiteral "#11121D";
+  	        bg0 = mkLiteral "#11121D99";
   	        bg1 = mkLiteral "#21222C";
   	        bg2 = mkLiteral "#282A36";
   	        bg3 = mkLiteral "#44475A";

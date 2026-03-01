@@ -6,8 +6,9 @@
   	settings = {
   	  exec-once = [
         "hyprctl setcursor Bibata-Modern-Classic 15"
-        "swww-daemon"
-        "swww img ${./wallpapers/snow.png}"
+        #"swww-daemon"
+        #"swww img ${./wallpapers/snow.png}"
+        #"noctalia-shell"
   	  ];
       input = {
         "kb_layout" = "ch";

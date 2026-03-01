@@ -22,9 +22,9 @@
     };
     
     general = {
-      border_size = 1;
-      gaps_in = 1;
-      gaps_out = 1;
+      border_size = 0;
+      gaps_in = 0;
+      gaps_out = 0;
       float_gaps = 0;
   	  resize_on_border = true;
      };
@@ -44,9 +44,9 @@
   	      "$mod, Q, exec, kitty"                     # Open terminal (you can swap with 'foot')
   	      "$mod, C, killactive,"                     # Close focused window
   	      "$mod, M, exit,"                           # Exit Hyprland
-  	      "$mod, E, exec, dolphin"                   # Open file manager
+  	      "$mod, E, exec, rofi -show filebrowser"                   # Open file manager
   	      "$mod, V, togglefloating,"                 # Toggle window between floating/tiled
-  	      "$mod, R, exec, wofi --show drun"          # Open app launcher
+  	      "$mod, R, exec, rofi -show drun"           # Open app launcher
   	      "$mod, P, pseudo,"                         # Dwindle (pseudo-tiling)
   	      "$mod, J, togglesplit,"                    # Dwindle (split orientation)
           "$mod, B, exec, brave"

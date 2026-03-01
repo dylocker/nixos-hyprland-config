@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -33,6 +32,9 @@
 
   services.printing.enable = true;
 
+  services.tuned.enable = true;
+  services.upower.enable = true;
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
@@ -40,14 +42,14 @@
       options snd-hda-intel model=hp-led-hp-mic
     '';
 
-    hardware.enableAllFirmware = true;
+  hardware.enableAllFirmware = true;
 
-    services.pipewire = {
+  services.pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-    };
+  };
 
   hardware.bluetooth = {
     enable = true;
@@ -87,7 +89,6 @@
    acpi
    nh
    bibata-cursors
-   mpd
    lm_sensors
   ];
   fonts.packages = with pkgs; [
@@ -97,6 +98,6 @@
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
  
-  system.stateVersion = "25.11"; 
+  system.stateVersion = "26.05"; 
 
 }

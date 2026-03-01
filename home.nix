@@ -3,12 +3,13 @@
 {
   home.username = "daniellee";
   home.homeDirectory = "/home/daniellee";
-  home.stateVersion = "25.11"; 
+  home.stateVersion = "26.05"; 
 
   imports = [
     ./hyprland.nix
     ./modules/waybar.nix
     ./modules/rofi.nix
+    ./modules/neovim.nix
   ];
 
   programs.bash = {
@@ -37,7 +38,6 @@
     brave
     lf
     micro
-    foot
     kitty
     fastfetch
     swww
@@ -62,7 +62,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      background_opacity = "0.7"; # 0.0 to 1.0
+      background_opacity = "0.6"; # 0.0 to 1.0
     };
   };
 

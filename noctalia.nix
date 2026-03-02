@@ -13,7 +13,7 @@
           barType = "simple";
           position = "top";
           monitors = [ ];
-          density = "default";
+          density = "compact";
           showOutline = false;
           showCapsule = true;
           capsuleOpacity = 1;
@@ -159,7 +159,7 @@
           settingsPanelSideBarCardStyle = false;
         };
         location = {
-          name = "Tokyo";
+          name = "Yverdon-les-Bains, Switzerland";
           weatherEnabled = true;
           weatherShowEffects = true;
           useFahrenheit = false;
@@ -191,7 +191,7 @@
         wallpaper = {
           enabled = true;
           overviewEnabled = false;
-          directory = "";
+          directory = ".dotfiles/wallpapers";
           monitorDirectories = [ ];
           enableMultiMonitorDirectories = false;
           showHiddenFiles = false;
@@ -237,7 +237,7 @@
           pinnedApps = [ ];
           useApp2Unit = false;
           sortByMostUsed = true;
-          terminalCommand = "alacritty -e";
+          terminalCommand = "kitty -e";
           customLaunchPrefixEnabled = false;
           customLaunchPrefix = "";
           viewMode = "list";
@@ -275,19 +275,13 @@
                 id = "Notifications";
               }
               {
+                id = "PowerProfile";
+              }
+              {
                 id = "KeepAwake";
               }
               {
-                id = "NightLight";
-              }
-              {
-              	id = "Bluetooth";
-              }
-              {
-                id = "Network";
-              }
-              {
-              	id = "PowerProfile";
+              	id = "NightLight";
               }
             ];
           };
@@ -486,7 +480,7 @@
         };
         colorSchemes = {
           useWallpaperColors = false;
-          predefinedScheme = "Noctalia (default)";
+          predefinedScheme = "Tokyo Night";
           darkMode = true;
           schedulingMode = "off";
           manualSunrise = "06:30";

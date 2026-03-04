@@ -41,8 +41,22 @@
     kitty
     fastfetch
     swww
+    localsend
+    xdg-desktop-portal-gtk
   ];
-
+  
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+  };
+  
+  home.sessionVariables = {
+    PASSWORD_STORE_TYPE = "gnome";
+  };
+  
   home.pointerCursor = {
     gtk.enable = true;
     # x11.enable = true;

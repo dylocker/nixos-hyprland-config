@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{  pkgs, ... }:
 
 {
   home.username = "daniellee";
@@ -9,7 +9,7 @@
     ./hyprland.nix
     ./modules/waybar.nix
     ./modules/rofi.nix
-    ./modules/neovim.nix
+    ./modules/nvf.nix
   ];
 
   programs.bash = {
@@ -35,7 +35,6 @@
   };
   
   home.packages = with pkgs; [
-    brave
     lf
     micro
     kitty

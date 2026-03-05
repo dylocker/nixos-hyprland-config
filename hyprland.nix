@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -52,7 +52,7 @@
   	      "$mod, R, exec, rofi -show drun"           # Open app launcher
   	      "$mod, P, pseudo,"                         # Dwindle (pseudo-tiling)
   	      "$mod, J, togglesplit,"                    # Dwindle (split orientation)
-          "$mod, B, exec, brave"
+              "$mod, B, exec, brave"
   	      "$mod, W, exec, pkill waybar && waybar &"
   	      # Focus Movement (Vim-style or Arrow keys)
   	      "$mod, left, movefocus, l"
@@ -110,8 +110,8 @@
  	    bindl = [
   	          # Media control and Mute (l = works on lockscreen)
   	      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-          ", XF86AudioPlay, exec, playerctl play-pause"
-          ", XF86AudioNext, exec, playerctl next"
+              ", XF86AudioPlay, exec, playerctl play-pause"
+              ", XF86AudioNext, exec, playerctl next"
   	      ", XF86AudioPrev, exec, playerctl previous"
         ];
   	};

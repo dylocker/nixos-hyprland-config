@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ lib, ... }: {
 
   programs.nvf = {
     enable = true;
@@ -11,6 +11,7 @@
           enable = true;
           name = "nord";
           #style = "dark";
+          transparent = true;
         };
 
         statusline.lualine.enable = true;
@@ -20,7 +21,10 @@
         clipboard = {
           enable = true;
           providers.wl-copy.enable = true;
-        };  
+        };
+          
+        options.clipboard = lib.mkForce "unnamedplus";
+        
         languages = {
           enableLSP = true;
           enableTreesitter = true;

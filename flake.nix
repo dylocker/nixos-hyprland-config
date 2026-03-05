@@ -7,11 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: { 
+  outputs = { self, nixpkgs, home-manager, nvf, ... }@inputs: { 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -23,7 +22,12 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = { inherit inputs; };
-            users.daniellee = import ./home.nix;
+            users.daniellee = {
+              imports = [ 
+                ./home.nix
+                nvf.homeManagerModules.default
+              ];
+            };
             backupFileExtension = "backup";
           };
         }

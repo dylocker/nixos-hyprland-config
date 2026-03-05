@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -102,10 +102,10 @@
 
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
+  
 
   # Full Package List ---
   environment.systemPackages = with pkgs; [
-    vim
     dmidecode 
     wget 
     wl-clipboard 

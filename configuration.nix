@@ -29,6 +29,8 @@
       libvdpau-va-gl
     ];
   };
+  
+  #services.xserver.videoDrivers = ["nvidia"];
 
   # Hyprland Setup
   programs.hyprland = {

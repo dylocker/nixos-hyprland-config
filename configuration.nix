@@ -13,7 +13,7 @@
   '';
 
   # Autologin ----
-  #services.getty.autologinUser = "daniellee";
+  services.getty.autologinUser = "daniellee";
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -37,6 +37,8 @@
     enable = true;
     xwayland.enable = true;
   };
+
+  security.pam.services.hyprlock = {};
 
   services.xserver.xkb = {
     layout = "ch";

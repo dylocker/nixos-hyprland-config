@@ -10,6 +10,7 @@
     ./modules/waybar.nix
     ./modules/rofi.nix
     ./modules/nvf.nix
+    ./modules/hyprlock.nix
   ];
 
   programs.bash = {

@@ -42,6 +42,7 @@
     swww
     localsend
     xdg-desktop-portal-gtk
+    nautilus
   ];
   
   xdg.portal = {

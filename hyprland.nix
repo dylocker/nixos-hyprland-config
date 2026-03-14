@@ -2,25 +2,26 @@
 
 {
   wayland.windowManager.hyprland = {
-  	enable = true;
-  	settings = {
-  	  exec-once = [
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "hyprctl setcursor Bibata-Modern-Classic 15"
-        "swww-daemon"
-        "swww img ${./wallpapers/snow.png}"
-        "mako"
-  	  ];
-      input = {
-        "kb_layout" = "ch";
-        "kb_variant" = "fr";
+    enable = true;
+    settings = {
+    exec-once = [
+      "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      "hyprctl setcursor Bibata-Modern-Classic 15"
+      "swww-daemon"
+      "swww img ${./wallpapers/snow.png}"
+      "mako"
+    ];
+
+    input = {
+      "kb_layout" = "ch";
+      "kb_variant" = "fr";
     	
-	  touchpad = {
-	    natural_scroll = true;
-	    scroll_factor = 0.7;
-	    tap-to-click = false;
-      };
+    touchpad = {
+      natural_scroll = true;
+      scroll_factor = 0.7;
+      tap-to-click = false;
+    };
     	
     };
     
@@ -47,7 +48,7 @@
   	      "$mod, Q, exec, kitty"                     # Open terminal (you can swap with 'foot')
   	      "$mod, C, killactive,"                     # Close focused window
   	      "$mod, M, exit,"                           # Exit Hyprland
-  	      "$mod, E, exec, rofi -show filebrowser"                   # Open file manager
+  	      "$mod, E, exec, nautilus"                  # Open file manager
   	      "$mod, V, togglefloating,"                 # Toggle window between floating/tiled
   	      "$mod, R, exec, rofi -show drun"           # Open app launcher
   	      "$mod, P, pseudo,"                         # Dwindle (pseudo-tiling)
@@ -118,3 +119,4 @@
   };
 	
 }
+

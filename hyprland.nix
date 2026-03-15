@@ -10,7 +10,7 @@
       "hyprctl setcursor Bibata-Modern-Classic 15"
       "swww-daemon"
       "swww img ${./wallpapers/snow.png}"
-      "hyprlock"
+      "hypridle"
       "mako"
     ];
 

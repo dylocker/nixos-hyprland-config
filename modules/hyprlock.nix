@@ -24,7 +24,7 @@
                         
       background = [
         {
-          path = "screenshot";
+          path = "/home/daniellee/.dotfiles/wallpapers/snow.png";
           blur_passes = 3;
           blur_size = 8;
         }
@@ -41,13 +41,10 @@
           inner_color = "rgb(91, 96, 120)";
           outer_color = "rgb(24, 25, 38)";
           outline_thickness = 5;
-          # placeholder_text = "<span foreground='#cad3f5'>Password...</span>";
+          placeholder_text = " ";
           shadow_passes = 2;
         }
       ];
     };
   };
-
-  # This stays separate as it's its own service
-  services.hypridle.enable = true;
 }

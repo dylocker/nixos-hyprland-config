@@ -11,6 +11,7 @@
     ./modules/rofi.nix
     ./modules/nvf.nix
     ./modules/hyprlock.nix
+    ./modules/hypridle.nix
   ];
 
   programs.bash = {

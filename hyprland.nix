@@ -8,9 +8,9 @@
       "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "hyprctl setcursor Bibata-Modern-Classic 15"
+      "hyprlock"
       "swww-daemon"
       "swww img ${./wallpapers/snow.png}"
-      "hypridle"
       "mako"
     ];
 

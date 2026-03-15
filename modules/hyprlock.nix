@@ -30,6 +30,30 @@
         }
       ];
 
+      label = [
+        # The Clock
+        {
+          monitor = "";
+          text = "$TIME"; 
+          font_size = 64;
+          font_family = "Inter Bold"; 
+          position = "0, 80";
+          halign = "center";
+          valign = "center";
+        #color = "rgb(202, 211, 245)"; # Catppuccin Macchiato Text
+        }
+        # The Date
+        {
+          monitor = "";
+          text = "cmd[update:43200000] echo \"$(date +'%A, %d %B')\"";
+          font_size = 24;
+          font_family = "Inter";
+          position = "0, 20";
+          halign = "center";
+          valign = "center";
+        }
+      ];
+
       input-field = [
         {
           size = "200, 50";
@@ -42,7 +66,7 @@
           outer_color = "rgb(24, 25, 38)";
           outline_thickness = 5;
           placeholder_text = " ";
-          shadow_passes = 2;
+          shadow_passes = 0;
         }
       ];
     };

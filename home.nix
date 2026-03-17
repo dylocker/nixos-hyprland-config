@@ -35,16 +35,24 @@
       init.defaultBranch = "main";
   	};
   };
-  
+
+  stylix.targets.kitty.enable = false;
+  programs.kitty = {
+    enable = true;
+    settings = {
+      background_opacity = "0.6"; # 0.0 to 1.0
+    };
+  };
+
   home.packages = with pkgs; [
     lf
     micro
-    kitty
     fastfetch
     swww
     localsend
     xdg-desktop-portal-gtk
     nautilus
+    btop
   ];
   
   xdg.portal = {
@@ -58,29 +66,7 @@
   home.sessionVariables = {
     PASSWORD_STORE_TYPE = "gnome";
   };
-  
-  home.pointerCursor = {
-    gtk.enable = true;
-    # x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 15;
-  };
-  
-  gtk = {
-    enable = true;
-    theme = {
-      package = pkgs.adw-gtk3;
-      name = "adw-gtk3";
-    };
-  };
-  
-  programs.kitty = {
-    enable = true;
-    settings = {
-      background_opacity = "0.6"; # 0.0 to 1.0
-    };
-  };
+
 
   programs.home-manager.enable = true;
 }

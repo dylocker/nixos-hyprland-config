@@ -1,6 +1,6 @@
 { lib, ... }: {
 
-  programs.nvf = {
+  programs.nvf = lib.mkForce {
     enable = true;
     settings = {
       vim = {

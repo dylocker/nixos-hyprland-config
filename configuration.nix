@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix 
+    ./stylix.nix
+  ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;

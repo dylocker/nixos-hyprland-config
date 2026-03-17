@@ -1,7 +1,7 @@
-{ ... }:
+{ lib, ... }:
 
 {
-  programs.hyprlock = {
+  programs.hyprlock = lib.mkForce {
     enable = true;
     # All your configuration must go inside this 'settings' block
     settings = {

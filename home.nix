@@ -49,6 +49,10 @@
     nautilus
     btop
     flavours
+    cmatrix
+    tty-clock
+    tenki
+    cava
   ];
   
   xdg.portal = {

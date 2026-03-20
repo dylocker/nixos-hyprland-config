@@ -43,6 +43,12 @@
           
         options.clipboard = lib.mkForce "unnamedplus";
         
+        options = {
+          tabstop = 2;      # The width of a tab character
+          shiftwidth = 2;   # The number of spaces inserted for indentation
+          expandtab = true;  # Convert tabs to spaces
+        };
+
         languages = {
           enableLSP = true;
           enableTreesitter = true;

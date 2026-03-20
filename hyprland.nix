@@ -27,9 +27,9 @@
     };
     
     general = {
-      border_size = 0;
-      gaps_in = 0;
-      gaps_out = 0;
+      border_size = 1;
+      gaps_in = 5;
+      gaps_out = 5;
       float_gaps = 0;
   	  resize_on_border = true;
      };
@@ -51,6 +51,7 @@
   	      "$mod, M, exit,"                           # Exit Hyprland
   	      "$mod, E, exec, nautilus"                  # Open file manager
   	      "$mod, V, togglefloating,"                 # Toggle window between floating/tiled
+          "$mod, F, fullscreen, toggle"
   	      "$mod, R, exec, rofi -show drun"           # Open app launcher
   	      "$mod, P, pseudo,"                         # Dwindle (pseudo-tiling)
   	      "$mod, J, togglesplit,"                    # Dwindle (split orientation)

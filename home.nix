@@ -35,14 +35,9 @@
       init.defaultBranch = "main";
   	};
   };
-
-  stylix.targets.kitty.enable = false;
-  programs.kitty = {
-    enable = true;
-    settings = {
-      background_opacity = "0.6"; # 0.0 to 1.0
-    };
-  };
+  
+  programs.kitty.enable = true;
+  stylix.targets.kitty.enable = true;
 
   home.packages = with pkgs; [
     lf
@@ -53,6 +48,7 @@
     xdg-desktop-portal-gtk
     nautilus
     btop
+    flavours
   ];
   
   xdg.portal = {

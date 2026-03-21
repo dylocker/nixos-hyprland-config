@@ -12,6 +12,7 @@
     ./modules/nvf.nix
     ./modules/hyprlock.nix
     ./modules/hypridle.nix
+    ./modules/mako.nix
   ];
 
   programs.bash = {
@@ -53,6 +54,8 @@
     tty-clock
     tenki
     cava
+    libreoffice-fresh
+    yazi
   ];
   
   xdg.portal = {

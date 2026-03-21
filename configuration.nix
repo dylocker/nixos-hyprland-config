@@ -135,7 +135,6 @@
     nh 
     bibata-cursors 
     lm_sensors 
-    mako
     libnotify 
     adwaita-icon-theme
   ];

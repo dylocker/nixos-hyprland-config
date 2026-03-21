@@ -9,9 +9,6 @@
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "hyprctl setcursor Bibata-Modern-Classic 15"
       "hyprlock"
-      #"swww-daemon"
-      #"swww img ${./wallpapers/snow.png}"
-      "mako"
     ];
 
     input = {
@@ -48,14 +45,14 @@
   	      # Basic System Actions
   	      "$mod, Q, exec, kitty"                     # Open terminal (you can swap with 'foot')
   	      "$mod, C, killactive,"                     # Close focused window
-  	      "$mod, M, exit,"                           # Exit Hyprland
+  	      "$mod, M, exec, wlogout" 
   	      "$mod, E, exec, nautilus"                  # Open file manager
   	      "$mod, V, togglefloating,"                 # Toggle window between floating/tiled
           "$mod, F, fullscreen, toggle"
   	      "$mod, R, exec, rofi -show drun"           # Open app launcher
   	      "$mod, P, pseudo,"                         # Dwindle (pseudo-tiling)
   	      "$mod, J, togglesplit,"                    # Dwindle (split orientation)
-              "$mod, B, exec, brave"
+          "$mod, B, exec, brave"
   	      "$mod, W, exec, pkill waybar && waybar &"
   	      # Focus Movement (Vim-style or Arrow keys)
   	      "$mod, left, movefocus, l"

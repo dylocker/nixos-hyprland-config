@@ -49,9 +49,8 @@
   };
   console.keyMap = "fr_CH";
 
-  # DBus + Mako ---
+  # DBus 
   services.dbus.enable = true;
-  services.dbus.packages = [ pkgs.mako ];
 
   #Printing & Power Management ---
   services.printing.enable = true;

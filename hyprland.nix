@@ -46,7 +46,7 @@
   	      "$mod, Q, exec, kitty"                     # Open terminal (you can swap with 'foot')
   	      "$mod, C, killactive,"                     # Close focused window
   	      "$mod, M, exec, wlogout" 
-  	      "$mod, E, exec, nautilus"                  # Open file manager
+  	      "$mod, E, exec, kitty -e yazi"                      # Open file manager
   	      "$mod, V, togglefloating,"                 # Toggle window between floating/tiled
           "$mod, F, fullscreen, toggle"
   	      "$mod, R, exec, rofi -show drun"           # Open app launcher

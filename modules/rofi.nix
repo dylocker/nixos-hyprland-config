@@ -5,6 +5,13 @@
     enable = true;
     modes = [ "drun" "emoji" ]; 
     plugins = [ pkgs.rofi-emoji ];
+
+    extraConfig = {
+      show-icons = true;
+      icon-theme = "Papirus"; # Or your preferred icon theme
+      display-drun = "";     # Optional: changes the search icon
+      drun-display-format = "{name}"; # Removes the generic 'exec' info
+    };
     
     theme = lib.mkForce (
       let
@@ -99,7 +106,7 @@
         };
 
         "element-icon" = {
-          size = mkLiteral "1em";
+          size = mkLiteral "1.5em";
           vertical-align = mkLiteral "0.5";
         };
 

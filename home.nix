@@ -13,6 +13,7 @@
     ./modules/hyprlock.nix
     ./modules/hypridle.nix
     ./modules/mako.nix
+    ./modules/wlogout.nix
   ];
 
   programs.bash = {
@@ -30,11 +31,13 @@
 
   programs.git = {
   	enable = true;
-  	userName = "dylocker";
-  	userEmail = "dylocker@gmail.com";
-  	extraConfig = {
+    settings = {
+      user = {
+        name = "dylocker";
+        email = "dylocker@gmail.com";
+      };
       init.defaultBranch = "main";
-  	};
+    };
   };
   
   programs.kitty.enable = true;
@@ -55,9 +58,11 @@
     tenki
     cava
     libreoffice-fresh
-    yazi
+    papirus-icon-theme
   ];
-  
+
+  programs.yazi.enable = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = [
@@ -68,8 +73,11 @@
   
   home.sessionVariables = {
     PASSWORD_STORE_TYPE = "gnome";
+    EDITOR = "nvim";
+    TERMINAL = "kitty";
+    SAL_USE_VCLPLUGIN = "gtk3";
+    FILE_MANAGER = "yazi";
   };
-
 
   programs.home-manager.enable = true;
 }

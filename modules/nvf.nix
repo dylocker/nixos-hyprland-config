@@ -48,9 +48,10 @@
           shiftwidth = 2;   # The number of spaces inserted for indentation
           expandtab = true;  # Convert tabs to spaces
         };
+       
+        lsp.enable = true;
 
         languages = {
-          enableLSP = true;
           enableTreesitter = true;
           nix.enable = true;
           ts.enable = true;

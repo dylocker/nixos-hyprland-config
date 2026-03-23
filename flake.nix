@@ -1,42 +1,37 @@
 {
-  description = "Hyprland on Nixos";
+  description = "Flakes";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nvf.url = "github:notashelf/nvf";
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, stylix, ... }@inputs: { 
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/laptop/configuration.nix
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
-            users.daniellee = {
-              imports = [ 
-                ./modules/home/home.nix
-                nvf.homeManagerModules.default
-              ];
-            };
-            backupFileExtension = "backup";
-          };
-        }
-      ];
+  outputs = { self, nixpkgs, ... }@inputs: { 
+    nixosConfigurations = {
+      # This is your Laptop
+      nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/laptop/configuration.nix
+        ];
+      };
+
+      # PREVIEW: This is how easy your Desktop will be later
+      # nixos-desktop = nixpkgs.lib.nixosSystem {
+      #   specialArgs = { inherit inputs; };
+      #   modules = [ ./hosts/desktop/configuration.nix ];
+      # };
     };
   };
 }

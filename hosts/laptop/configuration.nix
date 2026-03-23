@@ -4,6 +4,7 @@
   imports = [
     ./hardware.nix 
     ../../modules/nixos/stylix.nix
+    ../../modules/nixos/home-manager.nix
   ];
 
   # Bootloader

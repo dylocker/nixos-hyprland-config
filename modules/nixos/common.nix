@@ -61,6 +61,12 @@
   # Ensure hyprlock can verify passwords
   security.pam.services.hyprlock = {};
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";           # Forces Chromium/Electron to use Wayland
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+  };
   # Core Packages & Fonts
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [

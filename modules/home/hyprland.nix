@@ -3,6 +3,8 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = true;
+
     settings = {
     exec-once = [
       "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

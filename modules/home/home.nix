@@ -62,6 +62,7 @@
     spotify
     discord
     tree
+    adwaita-icon-theme
   ];
 
   programs.yazi.enable = true;

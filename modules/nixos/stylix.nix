@@ -21,7 +21,7 @@
       base0E = "4a73dc";
       base0F = "4970ea";
     };
-    image = ./wallpapers/snow.png;
+    image = ../../assets/wallpapers/snow.png;
     polarity = "dark";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
                 

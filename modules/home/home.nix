@@ -7,13 +7,13 @@
 
   imports = [
     ./hyprland.nix
-    ./modules/waybar.nix
-    ./modules/rofi.nix
-    ./modules/nvf.nix
-    ./modules/hyprlock.nix
-    ./modules/hypridle.nix
-    ./modules/mako.nix
-    ./modules/wlogout.nix
+    ./waybar.nix
+    ./rofi.nix
+    ./nvf.nix
+    ./hyprlock.nix
+    ./hypridle.nix
+    ./mako.nix
+    ./wlogout.nix
   ];
 
   programs.bash = {
@@ -59,6 +59,9 @@
     cava
     libreoffice-fresh
     papirus-icon-theme
+    spotify
+    discord
+    tree
   ];
 
   programs.yazi.enable = true;

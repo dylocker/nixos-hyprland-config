@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./hardware-configuration.nix 
-    ./stylix.nix
+    ./hardware.nix 
+    ./modules/nixos/stylix.nix
   ];
 
   # Bootloader

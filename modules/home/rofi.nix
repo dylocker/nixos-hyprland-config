@@ -20,7 +20,7 @@
       in {
         "*" = {
           # base00 is usually the background, base05 is usually the main text.
-          bg0 = mkLiteral "#${colors.base00}99"; # Added 99 for transparency
+          bg0 = mkLiteral "#${colors.base00}"; # Added 99 for transparency
           bg1 = mkLiteral "#${colors.base01}";
           bg2 = mkLiteral "#${colors.base02}";
           bg3 = mkLiteral "#${colors.base03}";

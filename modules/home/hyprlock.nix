@@ -24,7 +24,7 @@
                         
       background = [
         {
-          path = "/home/daniellee/.dotfiles/wallpapers/snow.png";
+          path = "../../assets/wallpapers/snow.png";
           blur_passes = 3;
           blur_size = 8;
         }

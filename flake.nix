@@ -19,7 +19,7 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./hosts/laptop/configuration.nix
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
@@ -29,7 +29,7 @@
             extraSpecialArgs = { inherit inputs; };
             users.daniellee = {
               imports = [ 
-                ./home.nix
+                ./modules/home/home.nix
                 nvf.homeManagerModules.default
               ];
             };

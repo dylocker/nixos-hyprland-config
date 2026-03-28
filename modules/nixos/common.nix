@@ -35,10 +35,13 @@
     settings.General.Experimental = true;
   };
 
+  programs.zsh.enable = true;
+
   # Users
   users.users.daniellee = {
     isNormalUser = true;
     description = "Daniel Lee";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "video" ];
   };
 
@@ -84,6 +87,7 @@
     nerd-fonts.symbols-only
     nerd-fonts.jetbrains-mono
     font-awesome
+    nerd-fonts.fira-code
   ];
 
   # Nix Settings

@@ -14,20 +14,10 @@
     ./hypridle.nix
     ./mako.nix
     ./wlogout.nix
+    ./kitty.nix
+    ./starship.nix
+    ./zsh.nix
   ];
-
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      btw = "echo i use nixos, btw";
-      nos = "sudo nixos-rebuild switch --flake .#nixos";
-    };
-    profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec Hyprland
-      fi
-    '';
-  }; 
 
   programs.git = {
   	enable = true;
@@ -40,8 +30,24 @@
     };
   };
   
-  programs.kitty.enable = true;
+# Zoxide: 'z' replaces 'cd' and learns your habits
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # Fzf: 'Ctrl+R' to search history and 'Alt+C' to find files
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   stylix.targets.kitty.enable = true;
+  stylix.targets.starship.enable = true;
   stylix.targets.qt.enable = false;
 
   home.packages = with pkgs; [

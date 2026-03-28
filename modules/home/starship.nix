@@ -29,7 +29,7 @@
       directory = {
         truncation_length = 3;
         truncate_to_repo = true;
-        substitution_aliases = {
+        substitutions = {
           "Documents" = "󰈙 ";
           "Downloads" = " ";
           "Music" = " ";

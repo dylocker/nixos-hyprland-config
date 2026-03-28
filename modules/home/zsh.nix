@@ -21,7 +21,7 @@
       tree = "eza --tree --icons";
 
       # NixOS specific shortcuts
-      nos = "sudo nixos-rebuild switch --flake .";
+      nos = "sudo nixos-rebuild switch --flake .#nixos";
       nclean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
 
       # Quick navigation
@@ -30,7 +30,7 @@
     };
 
     # Handy initialization commands
-    initExtra = ''
+    initContent = ''
       # Better search with arrow keys
       bindkey '^[[A' up-line-or-search
       bindkey '^[[B' down-line-or-search

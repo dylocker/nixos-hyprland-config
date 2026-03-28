@@ -20,7 +20,6 @@
         natural_scroll = true;
         scroll_factor = 0.7;
         tap-to-click = false;
-        clickfinger_behavior = true;
       };
     };
 
@@ -40,7 +39,13 @@
       gaps_out = 5;
       float_gaps = 0;
   	  resize_on_border = true;
-     };
+      layout = "dwindle";
+    };
+    
+    dwindle = {
+      preserve_split = 1;
+      force_split = 0;
+    };
 
     decoration = {
       rounding = 10;
@@ -68,13 +73,17 @@
       ];
     };
 
-    windowrulev1 = [
-      "float,class:^(pavucontrol)$"
-      "float,class:^(blueman-manager)$"
-      "float,class:^(nm-connection-editor)$"
-      "float,title:^(Open File)$"
-      "float,title:^(Volume Control)$"
-    ];     
+    windowrule = [
+      "match:class ^(pavucontrol)$, float 1"
+      "match:class ^(blueman-manager)$, float 1"
+      "match:class ^(nm-connection-editor)$, float 1"
+      "match:title ^(Open File)$, float 1"
+      "match:title ^(Volume Control)$, float 1"
+    
+      # Example for workspace assignment
+      #"match:class ^(brave-browser)$, workspace 3"
+    ];
+
   	  misc = {
   	    disable_hyprland_logo = true;
   	    disable_watchdog_warning = true;

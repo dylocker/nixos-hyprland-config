@@ -42,6 +42,7 @@
   
   programs.kitty.enable = true;
   stylix.targets.kitty.enable = true;
+  stylix.targets.qt.enable = false;
 
   home.packages = with pkgs; [
     lf

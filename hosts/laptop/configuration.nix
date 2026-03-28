@@ -25,6 +25,8 @@
       libvdpau-va-gl
     ];
   };
+  
+  services.getty.autologinUser = "daniellee";
 
   # Specific User Overrides (Brave with Wayland flags)
   users.users.daniellee.packages = with pkgs; [ 

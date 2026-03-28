@@ -45,22 +45,20 @@
     extraGroups = [ "networkmanager" "wheel" "video" ];
   };
 
-  # Nix Helper (nh) - The modern way to manage Nix
-  #programs.nh = {
-  # enable = true;
-  # clean.enable = true;
-  # clean.extraArgs = "--keep-since 4d --keep 3";
-  # flake = "/home/daniellee/.dotfiles";
-  #};
-
   # System-wide Programs
-  
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
   programs.firefox.enable = true;
-  
+
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "daniellee";
+  };
+
   # Ensure hyprlock can verify passwords
   security.pam.services.hyprlock = {};
 

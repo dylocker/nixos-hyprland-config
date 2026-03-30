@@ -49,6 +49,7 @@
   stylix.targets.kitty.enable = true;
   stylix.targets.starship.enable = true;
   stylix.targets.qt.enable = false;
+  stylix.targets.hyprlock.enable = false;
 
   home.packages = with pkgs; [
     lf

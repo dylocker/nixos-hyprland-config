@@ -17,6 +17,7 @@
     ./kitty.nix
     ./starship.nix
     ./zsh.nix
+    ./fastfetch.nix
   ];
 
   programs.git = {

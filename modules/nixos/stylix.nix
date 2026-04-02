@@ -6,27 +6,10 @@
 
   stylix = {
     enable = true;
-    base16Scheme = {
-      base00 = "000000"; # Forced black background
-      base01 = "1f2943";
-      base02 = "4e566a";
-      base03 = "7d8391";
-      base04 = "abafb8";
-      base05 = "dadcdf"; # Main text color
-      base06 = "ffffff";
-      base07 = "ffffff";
-      base08 = "3576dd"; 
-      base09 = "5c79ab";
-      base0A = "a9608e";
-      base0B = "a36b42";
-      base0C = "5278b9";
-      base0D = "5674cc";
-      base0E = "4a73dc";
-      base0F = "4970ea";
-    };
-    image = ../../assets/wallpapers/snow.png;
+
+    image = ../../assets/wallpapers/goose.png;
     polarity = "dark";
-    #base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
                 
     cursor = {
       package = pkgs.bibata-cursors;
@@ -55,7 +38,7 @@
     };
    
     opacity = {
-      terminal = 0.6;
+      terminal = 0.7;
       popups = 0.95;
     };
   };

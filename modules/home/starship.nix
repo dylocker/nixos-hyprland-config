@@ -1,85 +1,92 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
+let
+  # Access the Stylix color palette
+  palette = config.lib.stylix.colors;
+in
 {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
     settings = {
-      # This 'format' defines the rainbow sequence. 
-      # Each segment has a background (bg) and foreground (fg).
+      # We use #hex codes here so Starship gets the exact theme colors
       format = lib.concatStrings [
-        "[](blue)"
+        "[](#${palette.base0D})" # Start (Blue)
         "$os"
         "$username"
-        "[](fg:blue bg:magenta)"
+        "[](fg:#${palette.base0D} bg:#${palette.base0E})" # Blue to Magenta
         "$directory"
-        "[](fg:magenta bg:cyan)"
+        "[](fg:#${palette.base0E} bg:#${palette.base0C})" # Magenta to Cyan
         "$git_branch"
         "$git_status"
-        "[](fg:cyan bg:yellow)"
+        "[](fg:#${palette.base0C} bg:#${palette.base0A})" # Cyan to Yellow
         "$nodejs"
         "$rust"
         "$python"
         "$nix_shell"
-        "[](fg:yellow bg:surface0)"
+        "[](fg:#${palette.base0A} bg:#${palette.base02})" # Yellow to Surface/Base02
         "$time"
-        "[ ](fg:surface0)"
+        "[ ](fg:#${palette.base02})" # End
         "$line_break$character"
       ];
 
-      # Configure each module to use the background colors assigned above
       directory = {
         format = "[ $path ]($style)";
-        style = "bg:magenta fg:base00"; # base00 is usually the background color in Stylix
+        style = "bg:#${palette.base0E} fg:#${palette.base00}";
       };
 
       git_branch = {
         symbol = "";
         format = "[ $symbol $branch ]($style)";
-        style = "bg:cyan fg:base00";
+        style = "bg:#${palette.base0C} fg:#${palette.base00}";
       };
 
       git_status = {
         format = "[$all_status$ahead_behind ]($style)";
-        style = "bg:cyan fg:base00";
+        style = "bg:#${palette.base0C} fg:#${palette.base00}";
       };
 
       nodejs = {
         symbol = "";
         format = "[ $symbol ($version) ]($style)";
-        style = "bg:yellow fg:base00";
+        style = "bg:#${palette.base0A} fg:#${palette.base00}";
       };
 
       rust = {
         symbol = "";
         format = "[ $symbol ($version) ]($style)";
-        style = "bg:yellow fg:base00";
+        style = "bg:#${palette.base0A} fg:#${palette.base00}";
       };
 
       nix_shell = {
         symbol = "";
         format = "[ $symbol ]($style)";
-        style = "bg:yellow fg:base00";
+        style = "bg:#${palette.base0A} fg:#${palette.base00}";
       };
 
       username = {
         show_always = true;
-        style_user = "bg:blue fg:base00";
-        style_root = "bg:blue fg:base00";
+        style_user = "bg:#${palette.base0D} fg:#${palette.base00}";
+        style_root = "bg:#${palette.base0D} fg:#${palette.base00}";
         format = "[ $user ]($style)";
       };
 
       os = {
         disabled = false;
-        style = "bg:blue fg:base00";
+        style = "bg:#${palette.base0D} fg:#${palette.base00}";
       };
 
       time = {
         disabled = false;
-        time_format = "%R"; # Hour:Minute
-        style = "bg:surface0 fg:base05"; # base05 is usually text color
+        time_format = "%R";
+        style = "bg:#${palette.base02} fg:#${palette.base05}";
         format = "[ ♥ $time ]($style)";
       };
-    }; 
+      
+      character = {
+        success_symbol = "[➜](bold #${palette.base0B})"; # Green for success
+        error_symbol = "[➜](bold #${palette.base08})";   # Red for error
+      };
+    };
   };
 }

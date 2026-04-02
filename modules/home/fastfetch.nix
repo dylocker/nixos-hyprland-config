@@ -14,24 +14,64 @@
         size = {
         binaryPrefix = "si";
         };
-        #color = "blue";
-        separator = "  ";
+        separator = " ";
+        key = {
+          type = "both";      # This enables the "padding" characters
+          width = 15;
+          paddingLeft = 1;    # Space inside the box
+          paddingRight = 1;   # Space inside the box
+        };
       };
+
+      display.key.open = "║"; 
+      display.key.close = "║";
+
       modules = [
         {
-          type = "datetime";
-          key = "Date";
-          format = "{1}-{3}-{11}";
+          type = "os";
+          key = "OS";
+          format = "{2} {8}";
         }
         {
-          type = "datetime";
-          key = "Time";
-          format = "{14}:{17}:{20}";
+          type = "kernel";
+          key = "Kernel";
         }
-        "break"
-        "player"
+        {
+          type = "shell";
+          key = "Shell";
+        }
+       {
+          type = "wm";
+          key = "WM";
+        }
+        {
+          type = "terminal";
+          key = "Terminal";
+        }
+        {
+          type = "display";
+          key = "Display";
+        }
+        {
+          type = "cpu";
+          key = "CPU";
+        }
+        {
+          type = "gpu";
+          key = "GPU";
+        }
+        {
+          type = "disk";
+          key = "Disk";
+          folders = "/";
+        }
         "media"
-      ]; 
+        "break"
+        {
+          type = "colors";
+          symbol = "circle";
+        }
+      ];
     };
   };
 }

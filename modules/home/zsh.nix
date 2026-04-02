@@ -28,9 +28,10 @@
       ".." = "cd ..";
       "..." = "cd ../..";
     };
-
+    
     # Handy initialization commands
     initContent = ''
+      fastfetch
       # Better search with arrow keys
       bindkey '^[[A' up-line-or-search
       bindkey '^[[B' down-line-or-search

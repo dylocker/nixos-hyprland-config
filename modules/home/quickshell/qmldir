@@ -1,0 +1,5 @@
+singleton Theme Theme.qml
+TopBar TopBar.qml
+Workspaces Workspaces.qml
+Battery Battery.qml
+Clock Clock.qml

@@ -8,8 +8,17 @@ Item {
   readonly property var battery: UPower.displayDevice
   
   readonly property real rawPercent: battery ? battery.percentage : 0
-  readonly property real displayPercent: rawPercent <= 1 ? rawPercent * 100 : rawPercent
+  readonly property real displayPercent: {
+    // Convert 0.99 to 99
+    let val = rawPercent <= 1 ? rawPercent * 100 : rawPercent;
   
+    // If we are Charging (1) or Full (4) and above 99%, just show 100%
+    if (val > 99 && (battery.state === 1 || battery.state === 4)) {
+      return 100;
+    }
+  
+    return val;
+  }
   readonly property bool isPluggedIn: {
     if (!battery) return false;
   
@@ -62,7 +71,7 @@ Item {
     }
 
     Text {
-      text: Math.round(root.displayPercent) + "%"
+      text: Math.ceil(root.displayPercent) + "%"
       color: root.isPluggedIn ? Theme.colCyan : Theme.colFg
       font {
         family: Theme.fontFamily

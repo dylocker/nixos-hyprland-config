@@ -1,6 +1,9 @@
-singleton Theme Theme.qml
-TopBar TopBar.qml
-Workspaces Workspaces.qml
-Battery Battery.qml
-Clock Clock.qml
-singleton Time Time.qml
+# Singletons (The Brains)
+singleton Theme core/Theme.qml
+singleton Time core/Time.qml
+
+# Components (The Visuals)
+TopBar components/TopBar.qml
+Clock components/Clock.qml
+Battery components/Battery.qml
+Workspaces components/Workspaces.qml

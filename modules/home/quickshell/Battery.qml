@@ -7,21 +7,24 @@ Item {
   
   readonly property var battery: UPower.displayDevice
   
-  // This logic handles both 0.85 and 85.0 formats automatically
   readonly property real rawPercent: battery ? battery.percentage : 0
   readonly property real displayPercent: rawPercent <= 1 ? rawPercent * 100 : rawPercent
   
-  // Use the correct Enum name: UPower.Charging
-  readonly property bool isPluggedIn: battery ? (battery.state === UPower.Charging || 
-                                                battery.state === UPower.FullyCharged) : false
-
+  readonly property bool isPluggedIn: {
+    if (!battery) return false;
+  
+    return battery.state === UPower.Charging || 
+           battery.state === UPower.FullyCharged ||
+           battery.state === 1 || 
+           battery.state === 4;
+  }  
+  
   implicitWidth: batteryRow.width
-  implicitHeight: 24
+  implicitHeight: batteryRow.height 
 
   Row {
     id: batteryRow
-    spacing: 6
-    anchors.centerIn: parent
+    spacing: 6 
 
     Item {
       width: 22

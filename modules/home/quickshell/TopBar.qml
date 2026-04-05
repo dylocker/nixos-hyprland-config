@@ -10,12 +10,11 @@ PanelWindow {
     left: true
     right: true
   }
-  implicitHeight: 30 
+  implicitHeight: 25 
   color: "#1a1b26"
 
   RowLayout {
     anchors.fill: parent
-    anchors.margins: 8
 
     Clock { }
 

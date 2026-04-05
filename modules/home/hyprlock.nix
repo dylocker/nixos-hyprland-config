@@ -12,19 +12,17 @@
 
       animations = {
         enabled = true;
-        fade_in = {
-          duration = 300;
-          bezier = "easeOutQuint";
-        };
-        fade_out = {
-          duration = 300;
-          bezier = "easeOutQuint";
-        };
+        # Syntax: animation = NAME, ENABLED, DURATION, CURVE
+        bezier = "simple, 0.5, 0.1, 0.1, 1.0";
+        animation = [
+          "fadeIn, 1, 5, simple"
+          "fadeOut, 1, 5, simple"
+        ];
       };
                         
       background = [
         {
-          path = "../../assets/wallpapers/snow.png";
+          path = "${../../assets/wallpapers/goose.png}";
           blur_passes = 3;
           blur_size = 8;
         }

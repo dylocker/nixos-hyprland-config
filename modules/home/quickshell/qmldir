@@ -3,3 +3,4 @@ TopBar TopBar.qml
 Workspaces Workspaces.qml
 Battery Battery.qml
 Clock Clock.qml
+singleton Time Time.qml

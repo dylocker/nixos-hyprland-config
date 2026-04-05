@@ -18,6 +18,7 @@
     ./starship.nix
     ./zsh.nix
     ./fastfetch.nix
+    ./quickshell
   ];
 
   programs.git = {
@@ -51,12 +52,12 @@
   stylix.targets.starship.enable = true;
   stylix.targets.qt.enable = false;
   stylix.targets.hyprlock.enable = false;
+  stylix.targets.waybar.enable = true;
 
   home.packages = with pkgs; [
     lf
     micro
-    fastfetch
-    swww
+    awww
     localsend
     xdg-desktop-portal-gtk
     nautilus

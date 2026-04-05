@@ -56,7 +56,7 @@
           spacing = 10;
         };
 
-		"pulseaudio" = {
+		    "pulseaudio" = {
           format = "{icon} {volume}%";
           format-muted = "";
           format-icons = {
@@ -118,7 +118,7 @@
           border-bottom: 2px solid #b4befe;
       }
 
-      #clock, #pulseaudio, #network, #bluetooth, #battery, #tray, #backlight {
+     #clock, #pulseaudio, #network, #bluetooth, #battery, #tray, #backlight {
           padding: 0 8px;
           margin: 2px 2px;
           background-color: rgba(49, 50, 68, 0.5);

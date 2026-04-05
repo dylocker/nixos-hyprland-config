@@ -10,7 +10,6 @@
       "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "hyprlock"
-      "swww-daemon"
     ];
 
     input = {
@@ -75,7 +74,7 @@
 
     windowrule = [
       "match:class ^(pavucontrol)$, float 1"
-      "match:class ^(blueman-manager)$, float 1"
+      "match:class ^(blueman)$, float 1"
       "match:class ^(nm-connection-editor)$, float 1"
       "match:title ^(Open File)$, float 1"
       "match:title ^(Volume Control)$, float 1"

@@ -11,7 +11,7 @@
         height = 20;
         spacing = 4;
 
-        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+        modules-left = [ "niri/workspaces" "niri/window" ];
         modules-center = [ "clock" ];
         modules-right = [ "pulseaudio" "backlight" "bluetooth" "network" "battery" "tray" ];
 

@@ -59,10 +59,11 @@
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  #services.displayManager.autoLogin = {
-    #enable = true;
-    #user = "daniellee";
-  #};
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "daniellee";
+  };
+  services.displayManager.defaultSession = "niri";
 
   # Ensure hyprlock can verify passwords
   security.pam.services.hyprlock = {};

@@ -11,21 +11,39 @@
       spawn-at-startup = [
         { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ]; }
       ];
-
+      
+      outputs."eDP-1" = { # Replace "eDP-1" with your screen name (run 'niri msg outputs' to find it)
+        scale = 1.2;      # Try 1.25, 1.5, or 2.0
+      };
       input = {
         keyboard.xkb.layout = "ch,fr";
-        touchpad.tap = true;
+        touchpad.tap = false;
+
+        focus-follows-mouse = {
+          enable = true;
+        };
       };
 
       layout = {
         gaps = 8;
+        focus-ring.enable = false;
+        border = {
+          enable = false;
+          width = 2;
+        };
         default-column-width.proportion = 0.5;
+        preset-column-widths = [
+          { proportion = 0.33333; }
+          { proportion = 0.5; }
+          { proportion = 0.66667; }
+          { proportion = 1.0; }
+        ];
       };
 
       binds = {
         # --- Essentials ---
         "Mod+Return".action.spawn = "kitty";
-        "Mod+D".action.spawn = "rofi -show drun";
+        "Mod+D".action.spawn = ["rofi" "-show" "drun"];
         "Mod+Q".action.close-window = { };
         "Mod+Shift+E".action.quit = { }; # Exit Niri
 

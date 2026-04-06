@@ -1,9 +1,5 @@
 # Singletons (The Brains)
 singleton Theme core/Theme.qml
 singleton Time core/Time.qml
+singleton Network core/Network.qml
 
-# Components (The Visuals)
-TopBar components/TopBar.qml
-Clock components/Clock.qml
-Battery components/Battery.qml
-Workspaces components/Workspaces.qml

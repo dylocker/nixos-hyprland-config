@@ -1,7 +1,13 @@
 import Quickshell
 import QtQuick
 import "."
+import "./components"
 
 ShellRoot {
-  TopBar { }
+  NetworkPopup {
+   id: netPopup
+  }
+  TopBar {
+    networkPopupRef: netPopup
+  }
 }

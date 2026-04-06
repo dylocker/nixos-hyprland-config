@@ -6,7 +6,8 @@
       vim = {
         viAlias = false;
         vimAlias = true;
-        
+        globals.mapleader = " "; # Sets leader to Space
+
         theme = {
           enable = true;
           name = "base16";
@@ -31,7 +32,7 @@
             base0F = config.lib.stylix.colors.base0F;
           };
         };
-
+        binds.whichKey.enable = true; # Helps you remember your keybinds
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;

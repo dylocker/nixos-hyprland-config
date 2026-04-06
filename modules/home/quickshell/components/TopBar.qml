@@ -3,8 +3,11 @@ import Quickshell.Wayland
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import "../core"
+
 
 PanelWindow {
+  property var networkPopupRef
   anchors {
     top: true
     left: true
@@ -19,6 +22,10 @@ PanelWindow {
     Clock { }
 
     Item { Layout.fillWidth: true }
+
+    NetworkWidget {
+     popupRef: networkPopupRef
+    }
     
     Battery { }
   }

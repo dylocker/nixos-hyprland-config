@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
 
   # Bootloader (Standard for most modern UEFI systems)
   boot.loader.systemd-boot.enable = true;
@@ -50,23 +50,25 @@
     enable = true;
     xwayland.enable = true;
   };
+  
+  programs.niri = {
+    enable = true;
+  };
+
   programs.firefox.enable = true;
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "daniellee";
-  };
+  #services.displayManager.autoLogin = {
+    #enable = true;
+    #user = "daniellee";
+  #};
 
   # Ensure hyprlock can verify passwords
   security.pam.services.hyprlock = {};
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";           # Forces Chromium/Electron to use Wayland
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Hyprland";
   };
   # Core Packages & Fonts
   nixpkgs.config.allowUnfree = true;

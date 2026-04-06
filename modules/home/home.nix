@@ -19,6 +19,7 @@
     ./zsh.nix
     ./fastfetch.nix
     ./quickshell
+    ./niri.nix
   ];
 
   programs.git = {

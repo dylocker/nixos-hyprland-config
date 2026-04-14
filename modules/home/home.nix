@@ -7,19 +7,14 @@
 
   imports = [
     ./hyprland.nix
-    ./waybar.nix
-    ./rofi.nix
     ./nvf.nix
-    ./hyprlock.nix
-    ./hypridle.nix
-    ./mako.nix
-    ./wlogout.nix
     ./kitty.nix
     ./starship.nix
     ./zsh.nix
     ./fastfetch.nix
     ./quickshell
     ./niri.nix
+    ./noctalia.nix
   ];
 
   programs.git = {
@@ -50,10 +45,8 @@
   };
 
   stylix.targets.kitty.enable = true;
-  stylix.targets.starship.enable = true;
   stylix.targets.qt.enable = false;
-  stylix.targets.hyprlock.enable = false;
-  stylix.targets.waybar.enable = true;
+  stylix.targets.noctalia-shell.enable = false;
 
   home.packages = with pkgs; [
     lf

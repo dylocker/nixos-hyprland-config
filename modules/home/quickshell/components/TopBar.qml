@@ -22,11 +22,8 @@ PanelWindow {
     Clock { }
 
     Item { Layout.fillWidth: true }
-
-    NetworkWidget {
-     popupRef: networkPopupRef
-    }
     
+    NetworkWidget { }
     Battery { }
   }
 

@@ -11,6 +11,7 @@
         ../../modules/home/home.nix
         inputs.nvf.homeManagerModules.default
         inputs.niri-flake.homeModules.niri
+        inputs.noctalia.homeModules.default
       ];
     };
   };

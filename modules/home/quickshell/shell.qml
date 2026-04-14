@@ -4,10 +4,6 @@ import "."
 import "./components"
 
 ShellRoot {
-  NetworkPopup {
-   id: netPopup
-  }
   TopBar {
-    networkPopupRef: netPopup
   }
 }

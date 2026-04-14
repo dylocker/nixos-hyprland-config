@@ -1,6 +1,8 @@
-{ pkgs, inputs, ... }:
+{ lib, ... }:
+
 {
-    programs.noctalia-shell = {
-      enable = true;
+  programs.noctalia-shell = {
+    enable = true;
+    settings = lib.mkForce (builtins.fromJSON (builtins.readFile ./noctalia.json));
   };
 }

@@ -1,5 +1,4 @@
 # Singletons (The Brains)
 singleton Theme core/Theme.qml
 singleton Time core/Time.qml
-singleton Network core/Network.qml
 

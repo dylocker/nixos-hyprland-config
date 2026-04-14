@@ -8,11 +8,16 @@
 
   networking.hostName = "nixos_desktop";
 
-  # Desktop Specifics
-  hardware.graphics.enable = true;
-  
-  # If you have an NVIDIA GPU, add this:
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true; # Change to false ONLY if you have an old card (Pre-GTX 1600)
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   system.stateVersion = "26.05"; 
 }

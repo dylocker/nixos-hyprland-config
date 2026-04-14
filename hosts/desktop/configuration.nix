@@ -6,7 +6,7 @@
     ../../modules/nixos/home-manager.nix
   ];
 
-  networking.hostName = "nixos-desktop";
+  networking.hostName = "nixos_desktop";
 
   # Desktop Specifics
   hardware.graphics.enable = true;

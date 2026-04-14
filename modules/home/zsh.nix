@@ -18,8 +18,8 @@
       ll = "eza -lh --icons --group-directories-first";
       la = "eza -a --icons --group-directories-first";
       tree = "eza --tree --icons";
-      noslap = "sudo nixos-rebuild switch --flake .#nixos-laptop";
-      nosdes = "sudo nixos-rebuild switch --flake .#nixos-desktop";
+      noslap = "sudo nixos-rebuild switch --flake .#nixos_laptop";
+      nosdes = "sudo nixos-rebuild switch --flake .#nixos_desktop";
       nclean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
       ".." = "cd ..";
       "..." = "cd ../..";

@@ -6,7 +6,7 @@
     ../../modules/nixos/home-manager.nix
   ];
 
-  networking.hostName = "nixos";
+  networking.hostName = "nixos-laptop";
 
   # Laptop-Specific Hardware Fixes
   boot.extraModprobeConfig = "options snd-hda-intel model=hp-led-hp-mic";

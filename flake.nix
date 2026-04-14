@@ -35,18 +35,17 @@
   outputs = { self, nixpkgs, ... }@inputs: { 
     nixosConfigurations = {
       # This is your Laptop
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos_laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/laptop/configuration.nix
         ];
       };
 
-      # PREVIEW: This is how easy your Desktop will be later
-      # nixos-desktop = nixpkgs.lib.nixosSystem {
-      #   specialArgs = { inherit inputs; };
-      #   modules = [ ./hosts/desktop/configuration.nix ];
-      # };
+      nixos-desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/desktop/configuration.nix ];
+      };
     };
   };
 }

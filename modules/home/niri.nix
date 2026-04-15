@@ -25,7 +25,13 @@ in
         scale = if osConfig.networking.hostName == "nixos_laptop" then 1.2 else 1.0;
       };
       input = {
-        keyboard.xkb.layout = "ch,fr";
+        keyboard = {
+          xkb = {
+            layout = "ch,us"; 
+            variant = ",intl";  
+          };
+        };        
+
         touchpad.tap = false;
 
         focus-follows-mouse = {

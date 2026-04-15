@@ -91,6 +91,16 @@
     nerd-fonts.fira-code
   ];
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      qt6Packages.fcitx5-chinese-addons # Gives you Pinyin/Bopomofo
+      fcitx5-gtk            # For GTK apps
+    ];
+  };
+
   # Nix Settings
   nix.settings = {
     auto-optimise-store = true;

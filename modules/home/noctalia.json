@@ -28,18 +28,18 @@
     "widgets": {
       "left": [
         {
-          "colorizeSystemIcon": "none",
+          "colorizeSystemIcon": "primary",
           "colorizeSystemText": "none",
           "customIconPath": "",
           "enableColorization": false,
           "icon": "rocket",
           "iconColor": "none",
           "id": "Launcher",
-          "useDistroLogo": false
+          "useDistroLogo": true
         },
         {
           "clockColor": "none",
-          "customFont": "",
+          "customFont": "FiraCode Nerd Font Mono SemBd",
           "formatHorizontal": "HH:mm ddd, MMM dd",
           "formatVertical": "HH mm - dd MM",
           "id": "Clock",
@@ -75,7 +75,7 @@
           "maxWidth": 145,
           "scrollingMode": "hover",
           "showIcon": true,
-          "showText": true,
+          "showText": false,
           "textColor": "none",
           "useFixedWidth": false
         },
@@ -86,17 +86,21 @@
           "id": "MediaMini",
           "maxWidth": 145,
           "panelShowAlbumArt": true,
-          "scrollingMode": "hover",
+          "scrollingMode": "always",
           "showAlbumArt": true,
           "showArtistFirst": true,
           "showProgressRing": true,
           "showVisualizer": false,
           "textColor": "none",
           "useFixedWidth": false,
-          "visualizerType": "linear"
+          "visualizerType": "wave"
         }
       ],
       "center": [
+        {
+          "iconColor": "none",
+          "id": "WallpaperSelector"
+        },
         {
           "characterCount": 2,
           "colorizeIcons": false,
@@ -117,6 +121,14 @@
           "showBadge": true,
           "showLabelsOnlyWhenOccupied": true,
           "unfocusedIconsOpacity": 1
+        },
+        {
+          "hideWhenZero": false,
+          "hideWhenZeroUnread": false,
+          "iconColor": "none",
+          "id": "NotificationHistory",
+          "showUnreadBadge": true,
+          "unreadBadgeColor": "primary"
         }
       ],
       "right": [
@@ -130,21 +142,11 @@
           "pinned": []
         },
         {
-          "hideWhenZero": false,
-          "hideWhenZeroUnread": false,
+          "displayMode": "onhover",
           "iconColor": "none",
-          "id": "NotificationHistory",
-          "showUnreadBadge": true,
-          "unreadBadgeColor": "primary"
-        },
-        {
-          "deviceNativePath": "__default__",
-          "displayMode": "graphic-clean",
-          "hideIfIdle": false,
-          "hideIfNotDetected": true,
-          "id": "Battery",
-          "showNoctaliaPerformance": false,
-          "showPowerProfiles": false
+          "id": "KeyboardLayout",
+          "showIcon": true,
+          "textColor": "none"
         },
         {
           "displayMode": "onhover",
@@ -154,11 +156,19 @@
           "textColor": "none"
         },
         {
-          "applyToAllMonitors": false,
           "displayMode": "onhover",
           "iconColor": "none",
-          "id": "Brightness",
+          "id": "Network",
           "textColor": "none"
+        },
+        {
+          "deviceNativePath": "__default__",
+          "displayMode": "graphic-clean",
+          "hideIfIdle": false,
+          "hideIfNotDetected": true,
+          "id": "Battery",
+          "showNoctaliaPerformance": false,
+          "showPowerProfiles": false
         },
         {
           "colorizeDistroLogo": false,
@@ -172,7 +182,7 @@
         }
       ]
     },
-    "mouseWheelAction": "none",
+    "mouseWheelAction": "volume",
     "reverseScroll": false,
     "mouseWheelWrap": true,
     "middleClickAction": "none",
@@ -323,7 +333,7 @@
     "transitionEdgeSmoothness": 0.05,
     "panelPosition": "follow_bar",
     "hideWallpaperFilenames": false,
-    "useOriginalImages": true,
+    "useOriginalImages": false,
     "overviewBlur": 0.4,
     "overviewTint": 0.6,
     "useWallhaven": false,
@@ -497,7 +507,7 @@
   },
   "sessionMenu": {
     "enableCountdown": true,
-    "countdownDuration": 10000,
+    "countdownDuration": 1000,
     "position": "center",
     "showHeader": true,
     "showKeybinds": true,

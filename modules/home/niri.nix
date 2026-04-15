@@ -1,5 +1,13 @@
-{ pkgs, ... }: 
+{ pkgs, config, osConfig, ... }: 
 
+let
+  # Detect the monitor name based on the hostname
+  # Using the underscore names we set up in flake.nix
+  monitorName = if osConfig.networking.hostName == "nixos_laptop" 
+                then "eDP-1" 
+                else "HDMI-A-1"; # <--- Change "DP-1" to your desktop monitor name
+in
+  
 {
   home.packages = [ pkgs.xwayland-satellite ];
 
@@ -13,8 +21,8 @@
         { command = [ "noctalia-shell" ]; }
       ];
       
-      outputs."eDP-1" = { # Replace "eDP-1" with your screen name (run 'niri msg outputs' to find it)
-        scale = 1.2;      # Try 1.25, 1.5, or 2.0
+      outputs."${monitorName}" = { # Replace "eDP-1" with your screen name (run 'niri msg outputs' to find it)
+        scale = if osConfig.networking.hostName == "nixos_laptop" then 1.2 else 1.0;
       };
       input = {
         keyboard.xkb.layout = "ch,fr";

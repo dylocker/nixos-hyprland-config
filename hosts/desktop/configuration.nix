@@ -18,6 +18,17 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+  users.users.daniellee.packages = with pkgs; [ 
+    (brave.override {
+      commandLineArgs = [
+        "--password-store=gnome-libsecret"
+        "--enable-features=UseOzonePlatform"
+        "--ozone-platform=wayland"
+        #"--enable-wayland-ime"
+        #"--disable-features=WebRtcAllowInputVolumeAdjustment"
+      ];
+    })
+  ];
 
   system.stateVersion = "26.05"; 
 }

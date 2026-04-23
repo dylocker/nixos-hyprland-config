@@ -7,7 +7,7 @@
   stylix = {
     enable = true;
 
-    image = ../../assets/wallpapers/snow.png;
+    image = null;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
                 

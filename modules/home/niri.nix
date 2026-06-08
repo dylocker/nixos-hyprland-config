@@ -25,6 +25,9 @@ in
       outputs."${monitorName}" = { # Replace "eDP-1" with your screen name (run 'niri msg outputs' to find it)
         scale = if osConfig.networking.hostName == "nixos_laptop" then 1.2 else 1.0;
       };
+
+      prefer-no-csd = true;
+
       input = {
         keyboard = {
           xkb = {

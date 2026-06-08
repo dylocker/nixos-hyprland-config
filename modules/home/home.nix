@@ -67,6 +67,7 @@
     discord
     tree
     adwaita-icon-theme
+    obsidian
   ];
 
   programs.yazi.enable = true;

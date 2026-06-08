@@ -18,6 +18,7 @@ in
     settings = {
       spawn-at-startup = [
         { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ]; }
+        { command = [ "zsh" "-c" "sleep 2 && qs -c noctalia-shell ipc call lockScreen lock" ]; }
         { command = [ "noctalia-shell" ]; }
       ];
       
@@ -28,7 +29,7 @@ in
         keyboard = {
           xkb = {
             layout = "ch,us"; 
-            variant = ",intl";  
+            variant = "fr,intl";  
           };
         };        
 

@@ -59,6 +59,7 @@
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  services.xserver.libinput.enable = true;
   services.displayManager.autoLogin = {
     enable = true;
     user = "daniellee";

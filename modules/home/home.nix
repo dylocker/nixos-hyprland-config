@@ -50,13 +50,11 @@
 
   home.packages = with pkgs; [
     lf
-    micro
     awww
     localsend
     xdg-desktop-portal-gtk
     nautilus
     btop
-    flavours
     cmatrix
     tty-clock
     tenki

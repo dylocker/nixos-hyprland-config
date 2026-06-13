@@ -1,4 +1,4 @@
-{ pkgs, config, osConfig, ... }: 
+{ pkgs, osConfig, ... }: 
 
 let
   # Detect the monitor name based on the hostname
@@ -19,7 +19,7 @@ in
       spawn-at-startup = [
         { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ]; }
         { command = [ "zsh" "-c" "sleep 2 && qs -c noctalia-shell ipc call lockScreen lock" ]; }
-        { command = [ "noctalia-shell" ]; }
+        { command = [ "noctalia" ]; }
       ];
       
       outputs."${monitorName}" = { # Replace "eDP-1" with your screen name (run 'niri msg outputs' to find it)
@@ -63,7 +63,7 @@ in
         slowdown = 1.0; 
         # You can customize individual workspace/window transitions here
         # "spring" is the secret to that bouncy feel
-        workspace-switch = {
+        workspace-switch.kind = {
           spring = { 
             damping-ratio = 0.8; 
             stiffness = 1000; 
@@ -76,7 +76,7 @@ in
         # --- Essentials ---
         "Mod+Q".action.spawn = "kitty";
         "Mod+B".action.spawn = "brave";
-        "Mod+D".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
+        "Mod+D".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher" ];
         "Mod+C".action.close-window = { };
         "Mod+Shift+E".action.quit = { }; # Exit Niri
         "Mod+E".action.spawn = ["kitty" "-e" "yazi"];

@@ -46,10 +46,6 @@
   };
 
   # System-wide Programs
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   
   programs.niri = {
     enable = true;
@@ -59,7 +55,7 @@
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
   services.displayManager.autoLogin = {
     enable = true;
     user = "daniellee";
@@ -91,16 +87,6 @@
     font-awesome
     nerd-fonts.fira-code
   ];
-
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      qt6Packages.fcitx5-chinese-addons # Gives you Pinyin/Bopomofo
-      fcitx5-gtk            # For GTK apps
-    ];
-  };
 
   # Nix Settings
   nix.settings = {

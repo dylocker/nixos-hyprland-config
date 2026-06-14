@@ -44,6 +44,8 @@
   };
 
   stylix.targets.kitty.enable = true;
+  stylix.targets.firefox.enable = true;
+
   stylix.targets.qt.enable = false;
   stylix.targets.noctalia-shell.enable = false;
 

@@ -12,7 +12,6 @@
     ./starship.nix
     ./zsh.nix
     ./fastfetch.nix
-    ./quickshell
     ./niri.nix
     ./noctalia.nix
   ];

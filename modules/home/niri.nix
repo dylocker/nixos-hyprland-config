@@ -26,6 +26,9 @@ in
       };
 
       prefer-no-csd = true;
+      hotkey-overlay = {
+        skip-at-startup = true;
+      };
 
       input = {
         keyboard = {

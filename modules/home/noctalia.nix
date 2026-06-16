@@ -196,48 +196,6 @@
       tint_intensity = 0.30000001192092896
       wallpaper = ""
       
-      [lockscreen_widgets]
-      enabled = true
-      schema_version = 2
-      widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-widget-0000000000000001" ]
-      
-          [lockscreen_widgets.grid]
-          cell_size = 16
-          major_interval = 4
-          visible = true
-      
-          [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
-          box_height = 0.0
-          box_width = 0.0
-          cx = 1280.0
-          cy = 604.0
-          enabled = true
-          output = "HDMI-A-1"
-          rotation = 0.0
-          type = "login_box"
-      
-              [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-      
-          [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-          box_height = 0.0
-          box_width = 0.0
-          cx = 1280.0
-          cy = 485.0
-          enabled = true
-          output = "HDMI-A-1"
-          rotation = 0.0
-          type = "clock"
-      
-              [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
-              background = false
-              background_color = "error"
-              background_padding = 9.0
-              background_radius = 14.0
-              clock_style = "digital"
-              color = "on_surface"
-              font_family = ""
-              shadow = false
-      
       [nightlight]
       enabled = false
       force = false

@@ -8,6 +8,8 @@
       repaint_delay = 10;
       input_delay = 3;
       sync_to_monitor = "yes";
+      
+      background_blur = 20;
 
       scrollback_lines = 10000;
       enable_audio_bell = false;

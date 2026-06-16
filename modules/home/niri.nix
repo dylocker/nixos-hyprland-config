@@ -1,4 +1,4 @@
-{ pkgs, osConfig, ... }: 
+{ pkgs, osConfig, inputs, ... }: 
 
 let
   # Detect the monitor name based on the hostname
@@ -13,12 +13,12 @@ in
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri;
+    package = inputs.niri-flake.packages.${pkgs.system}.niri-unstable;
     settings = {
       spawn-at-startup = [
         { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ]; }
-        { command = [ "zsh" "-c" "sleep 2 && qs -c noctalia-shell ipc call lockScreen lock" ]; }
         { command = [ "noctalia" ]; }
+        { command = [ "sh" "-c" "sleep 2; qs -c noctalia ipc call lockScreen lock" ]; }
       ];
       
       outputs."${monitorName}" = { # Replace "eDP-1" with your screen name (run 'niri msg outputs' to find it)
@@ -69,7 +69,6 @@ in
           };
         };
       };
-
 
       binds = {
 

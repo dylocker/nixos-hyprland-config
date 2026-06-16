@@ -44,10 +44,9 @@
   };
 
   stylix.targets.kitty.enable = true;
-  stylix.targets.firefox.enable = true;
 
-  stylix.targets.qt.enable = false;
-  stylix.targets.noctalia-shell.enable = false;
+  stylix.targets.qt.enable = true;
+  stylix.targets.noctalia-shell.enable = true;
 
   home.packages = with pkgs; [
     lf
@@ -67,6 +66,7 @@
     tree
     adwaita-icon-theme
     obsidian
+    nitch
   ];
 
   programs.yazi.enable = true;

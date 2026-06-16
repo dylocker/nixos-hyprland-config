@@ -26,6 +26,7 @@
     };
     
     initContent = ''
+      nitch
       # --- 1. Fast Completion Initialization ---
       # This prevents Zsh from re-scanning the entire Nix store every time Kitty opens.
       # It only does a full check if the cache is older than 24 hours.

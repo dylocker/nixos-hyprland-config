@@ -18,7 +18,6 @@ in
       spawn-at-startup = [
         { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ]; }
         { command = [ "noctalia" ]; }
-        { command = [ "sh" "-c" "sleep 2; qs -c noctalia ipc call lockScreen lock" ]; }
       ];
       
       outputs."${monitorName}" = { # Replace "eDP-1" with your screen name (run 'niri msg outputs' to find it)

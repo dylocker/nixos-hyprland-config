@@ -53,11 +53,16 @@
 
   programs.firefox.enable = true;
 
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "sddm-astronaut-theme";
+    extraPackages = [ pkgs.sddm-astronaut ];
+  };
+
   services.libinput.enable = true;
   services.displayManager.autoLogin = {
-    enable = true;
+    enable = false;
     user = "daniellee";
   };
   services.displayManager.defaultSession = "niri";
@@ -79,6 +84,7 @@
     playerctl 
     nh 
     libnotify
+    sddm-astronaut
   ];
 
   fonts.packages = with pkgs; [

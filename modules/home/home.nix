@@ -6,7 +6,6 @@
   home.stateVersion = "26.05"; 
 
   imports = [
-    ./hyprland.nix
     ./nvf.nix
     ./kitty.nix
     ./starship.nix
@@ -67,6 +66,7 @@
     adwaita-icon-theme
     obsidian
     nitch
+    codex
   ];
 
   programs.yazi.enable = true;

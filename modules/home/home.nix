@@ -8,13 +8,13 @@
   imports = [
     ./nvf.nix
     ./kitty.nix
-    ./starship.nix
     ./zsh.nix
     ./fastfetch.nix
     ./niri.nix
     ./noctalia.nix
   ];
-
+  
+  home.file.".p10k.zsh".source = ./p10k.zsh;
   programs.git = {
   	enable = true;
     settings = {
@@ -26,17 +26,6 @@
     };
   };
   
-# Zoxide: 'z' replaces 'cd' and learns your habits
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  # Fzf: 'Ctrl+R' to search history and 'Alt+C' to find files
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
   programs.eza = {
     enable = true;
     enableZshIntegration = true;

@@ -6,12 +6,18 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
     history = {
       size = 1000;
       path = "$HOME/.zsh_history";
       ignoreAllDups = true;
     };
+  plugins = [
+    {
+      name = "powerlevel10k";
+      src = pkgs.zsh-powerlevel10k;
+      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    }
+  ];
 
     shellAliases = {
       ls = "eza --icons --group-directories-first";
@@ -25,10 +31,22 @@
       "..." = "cd ../..";
     };
     
+    completionInit = "autoload -U compinit && compinit";
+
+    # 3. Inject the Instant Prompt at the absolute top of ~/.zshrc
+    initExtraFirst = ''
+      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+      # Initialization code that may require console input should be run below this.
+      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+    '';
+
+    # 4. Source your configuration file at the bottom
+    initExtra = ''
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    '';
     initContent = ''
-      # --- 4. Keybindings ---
-      bindkey '^[[A' up-line-or-search
-      bindkey '^[[B' down-line-or-search
     '';
   };
 }

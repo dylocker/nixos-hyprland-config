@@ -3,12 +3,13 @@
 {
   programs.kitty = {
     enable = true;
-    
+    shellIntegration.mode = null;
     settings = {
       repaint_delay = 10;
       input_delay = 3;
       sync_to_monitor = "yes";
-      
+      single_instance = true;
+
       background_blur = 20;
 
       scrollback_lines = 10000;

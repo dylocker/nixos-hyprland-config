@@ -8,8 +8,7 @@
     enable = true;
     autoEnable = true;
     image = null;
-    polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
                 
     cursor = {
       package = pkgs.bibata-cursors;

@@ -56,6 +56,7 @@
     obsidian
     nitch
     codex
+    anki
   ];
 
   programs.yazi.enable = true;

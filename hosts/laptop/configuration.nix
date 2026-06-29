@@ -57,5 +57,33 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+    hardware.nvidia = {
+      modesetting.enable = true;
+
+      # Older GM108 / 940MX-era GPU: use proprietary driver, not open kernel module.
+      open = false;
+
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+      # Useful for suspend/resume stability.
+      powerManagement.enable = true;
+
+      # Fine-grained runtime power management is mainly for newer Turing+ GPUs.
+      # Keep false for this older Maxwell GPU.
+      powerManagement.finegrained = false;
+
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
   system.stateVersion = "26.05"; 
 }

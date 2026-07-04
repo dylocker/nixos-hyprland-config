@@ -435,9 +435,9 @@
       theme = {
         builtin = "Catppuccin";
         community_palette = "Kanagawa Paper";
-        custom_palette = "";
+        custom_palette = "stylix";
         mode = "dark";
-        source = "wallpaper";
+        source = "custom";
         wallpaper_scheme = "vibrant";
         templates = {
           builtin_ids = [ ];

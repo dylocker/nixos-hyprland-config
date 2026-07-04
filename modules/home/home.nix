@@ -44,8 +44,6 @@
     nautilus
     btop
     cmatrix
-    tty-clock
-    tenki
     cava
     libreoffice-fresh
     papirus-icon-theme
@@ -57,6 +55,9 @@
     nitch
     codex
     anki
+    blender
+    krita
+    audacity
   ];
 
   programs.yazi.enable = true;

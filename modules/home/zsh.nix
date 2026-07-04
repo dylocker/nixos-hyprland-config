@@ -29,6 +29,7 @@
       nclean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
       ".." = "cd ..";
       "..." = "cd ../..";
+      gitpush = "() { git add . && git commit -m 'changes' && git push github main; }";
     };
     
     completionInit = "autoload -U compinit && compinit";

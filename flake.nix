@@ -32,7 +32,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: { 
+  outputs = { self, nixpkgs, ... }@inputs: {
+    devShells.x86_64-linux.default = let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config = {
+        allowUnfree = true;
+        android_sdk.accept_license = true;
+        };
+      };
+    in import ./modules/dev-shells.nix { inherit pkgs; };
+
     nixosConfigurations = {
       # This is your Laptop
       nixos_laptop = nixpkgs.lib.nixosSystem {

@@ -1,28 +1,22 @@
-# modules/dev-shells.nix
 { pkgs }:
 
 let
-  # 1. Define the exact Android SDK components Godot needs
   androidComposition = pkgs.androidenv.composeAndroidPackages {
-    cmdLineToolsVersion = "8.0";
-    platformToolsVersion = "34.0.4";
-    buildToolsVersions = [ "33.0.2" "34.0.0" ];
-    platformVersions = [ "33" "34" ];
+    cmdLineToolsVersion = "8.0"; # Verify this version still exists if error persists
+    platformToolsVersion = "37.0.0"; # UPDATED: Use the latest available version from the error
+    buildToolsVersions = [ "34.0.0" "35.0.0" ]; # Consider updating these too if you encounter similar errors
+    platformVersions = [ "33" "34" "35" ]; # Added 35 just in case
     abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
     includeEmulator = false;
     includeSources = false;
     includeSystemImages = false;
     includeNDK = false;
+    #ndkVersions = [ "27.0.12077973" ];
   };
 
   androidSdk = androidComposition.androidsdk;
 
-in
-# OPTION A: Use mkShell (Recommended, lighter)
-pkgs.mkShell {
-  # Pass the config flags here if needed for specific packages, 
-  # though usually handled in flake.nix import.
-  
+in pkgs.mkShell {
   buildInputs = with pkgs; [
     godot_4
     openjdk17
@@ -33,28 +27,13 @@ pkgs.mkShell {
     ncurses
     git
   ];
-
   shellHook = ''
     export ANDROID_HOME="${androidSdk}/libexec/android-sdk"
     export ANDROID_SDK_ROOT="${androidSdk}/libexec/android-sdk"
     export JAVA_HOME="${pkgs.openjdk17.home}"
     export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH"
-    
     echo "🤖 Godot 4 Android Export Environment Active"
     echo "JDK Path:     $JAVA_HOME"
     echo "Android SDK:  $ANDROID_HOME"
   '';
 }
-
-# OPTION B: Use buildFHSEnv (Only if Option A fails with path errors)
-# pkgs.buildFHSEnv {
-#   name = "godot-android-env";
-#   targetPkgs = pkgs: with pkgs; [ godot_4 openjdk17 androidSdk android-tools glibc zlib ncurses git ];
-#   profile = ''
-#     export ANDROID_HOME="${androidSdk}/libexec/android-sdk"
-#     export ANDROID_SDK_ROOT="${androidSdk}/libexec/android-sdk"
-#     export JAVA_HOME="${pkgs.openjdk17.home}"
-#     export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH"
-#     echo "🤖 Godot 4 Android Export Environment Active (FHS)"
-#   '';
-# }   
